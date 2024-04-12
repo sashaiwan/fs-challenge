@@ -1,0 +1,33 @@
+{
+  "name": "fs-challenge",
+  "prettier": "prettier-config-standard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon app.js",
+    "test": "mocha --exit test/**/*.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bundled-es-modules/chai": "^4.3.7",
+    "axios": "^1.6.8",
+    "chai": "^5.1.0",
+    "csv-parse": "^5.5.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mocha": "^10.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prettier-config-standard": "^7.0.0",
+    "standard": "^17.1.0",
+    "supertest": "^6.3.4"
+  }
+}
