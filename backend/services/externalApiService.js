@@ -16,9 +16,14 @@ const options = {
  * Return an array with the names of all files listed from external source
  */
 async function getAllListedFiles() {
-  const response = await axios.get(allFilesUrl, options)
-  const filesJson = response.data
-  return filesJson.files
+  try {
+    const response = await axios.get(allFilesUrl, options)
+    const filesJson = response.data
+    return filesJson.files
+  } catch (error) {
+    console.error(error.message)
+    throw new Error('Files list could not be fetched')
+  }
 }
 
 /**
@@ -66,7 +71,7 @@ async function getRawFilesArray() {
   return rawFiles
 }
 
-export async function getAllFiles() {
+async function getAllFiles() {
   try {
     const results = []
     const rawFiles = await getRawFilesArray()
@@ -101,3 +106,7 @@ export async function getAllFiles() {
     throw error
   }
 }
+
+const fileService = { getAllFiles, getAllListedFiles }
+
+export default fileService

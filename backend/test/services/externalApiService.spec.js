@@ -1,7 +1,7 @@
 import nock from 'nock'
 import { expect } from 'chai'
 import { file1, file2, formattedFile1, formattedFile2 } from '../helpers.js'
-import { getAllFiles } from '../../services/externalApiService.js'
+import fileService from '../../services/externalApiService.js'
 
 describe('externalApiService', () => {
   describe('getAllFiles', () => {
@@ -26,7 +26,7 @@ describe('externalApiService', () => {
     })
 
     it('should parse CSV files and filter invalid ones', async () => {
-      const filesResult = await getAllFiles()
+      const filesResult = await fileService.getAllFiles()
 
       expect(filesResult).to.be.an('array')
       expect(filesResult.length).to.be.equal(2)
@@ -44,7 +44,7 @@ describe('externalApiService', () => {
       nock('https://echo-serv.tbxnet.com').get('/v1/secret/files').reply(500)
 
       try {
-        await getAllFiles()
+        await fileService.getAllFiles()
       } catch (error) {
         error.should.have
           .property('message')
