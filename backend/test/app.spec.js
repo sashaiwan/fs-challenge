@@ -19,7 +19,7 @@ describe('app', () => {
 
     it('should simulate server error and return status 500', async () => {
       const mockService = {
-        getAllFiles: () => Promise.reject(new Error('Internal Server Error'))
+        getAllFiles: () => Promise.reject(new Error('Service Error'))
       }
       const app = appContainer(mockService)
 
