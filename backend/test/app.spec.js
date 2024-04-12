@@ -1,5 +1,5 @@
 import request from 'supertest'
-import { expect } from '@bundled-es-modules/chai'
+import { expect } from 'chai'
 import appContainer from '../app.js'
 import { formattedFile1, formattedFile2 } from './helpers.js'
 
@@ -17,7 +17,7 @@ describe('app', () => {
       expect(response.body).to.deep.equal([formattedFile1, formattedFile2])
     })
 
-    it('should simulate server error and return status 500', async () => {
+    it('should return status 500 on service failure', async () => {
       const mockService = {
         getAllFiles: () => Promise.reject(new Error('Service Error'))
       }

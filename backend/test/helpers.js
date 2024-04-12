@@ -6,9 +6,9 @@ export const formattedFile1 = {
   file: 'test2.csv',
   lines: [
     {
-      text: 'ueUBHMlGyZaxnvlH',
-      number: 534,
-      hex: '4ed7f96856c633c4751f505d443bcb47'
+      text: 'tpTTdgDbuwKLYmglZXdt',
+      number: 2546,
+      hex: 'be3f8a2a25f2425ea8b875572587c658'
     }
   ]
 }
