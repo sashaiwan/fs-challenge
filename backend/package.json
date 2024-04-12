@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon app.js",
+    "dev": "nodemon index.js",
     "test": "mocha --exit test/**/*.spec.js"
   },
   "author": "",
