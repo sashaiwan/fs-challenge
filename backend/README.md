@@ -22,3 +22,12 @@ Este proyecto está construido sobre Node 14.21.3.
 - Correr los test: `npm test`
 - Iniciar la apliación: `npm start`
 - Iniciar en _watchmode_ `npm run dev`
+
+## Env
+
+- EXTERNAL_API_SECRET: el secret para la API externa
+
+## Docker
+
+- Crear el container: `docker build -f dockerfile -t [nameTag] .`
+- Correr el container: `docker run -d -it -p 3000:3000 --name [name] [nameTag]`
