@@ -1,9 +1,12 @@
 import express from 'express'
+import cors from 'cors'
 import 'dotenv/config'
 import fileService from './services/externalApiService.js'
 
 const appContainer = (dependencies = {}) => {
   const app = express()
+  app.use(cors())
+
   const { getAllFiles = fileService.getAllFiles } = dependencies
   const { getAllListedFiles = fileService.getAllListedFiles } = dependencies
 
