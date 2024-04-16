@@ -19,6 +19,7 @@
     "@bundled-es-modules/chai": "^4.3.7",
     "axios": "^1.6.8",
     "chai": "^5.1.0",
+    "cors": "^2.8.5",
     "csv-parse": "^5.5.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
